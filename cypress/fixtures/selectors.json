@@ -1,0 +1,14 @@
+{
+    "week": ".page-nav__day",
+    "title": ".page-header__title",
+    "movie": ".movie",
+    "adminTitle": ".page-header__subtitle",
+
+    "emailField": "[type='email']",
+    "passField": "[type='password']",
+
+    "scheme": ".buying-scheme__wrapper",
+    "seatPlace": " > :nth-child",
+
+    "button": ".acceptin-button"
+}

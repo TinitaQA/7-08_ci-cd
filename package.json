@@ -1,0 +1,13 @@
+{
+  "name": "7-08_ci-cd",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  },
+  "author": "Kris Mishchuk",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^13.11.0"
+  }
+}
