@@ -4,10 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test:login": "npx cypress run --record --key c6d3ed46-b94d-4a1d-94b4-dd0d569d5033 --spec \"cypress/e2e/loginMovie.cy.js\" --group login --ci-build-id 2",
+    "test:page": "npx cypress run --record --key c6d3ed46-b94d-4a1d-94b4-dd0d569d5033 --spec \"cypress/e2e/mainPage.cy.js\" --group page --ci-build-id 2",
+    "test:seats": "npx cypress run --record --key c6d3ed46-b94d-4a1d-94b4-dd0d569d5033 --spec \"cypress/e2e/movies.cy.js\" --group seats --ci-build-id 2",
+    "test:parallel": "run-p -c test:page test:login test:seats"
   },
   "author": "Kris Mishchuk",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^13.11.0"
+    "cypress": "^13.11.0",
+    "npm-run-all": "^4.1.5"
   }
 }
