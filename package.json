@@ -14,7 +14,7 @@
     "test:noMovies:electron": "npx cypress run --browser electron --record --spec \"cypress/e2e/movie/noMovies.cy.js\" --group noMovies.:electron",
     "test:seats:electron": "npx cypress run --browser electron --record --spec \"cypress/e2e/movie/movies.cy.js\" --group seats:electron",
     "test:parallel:electron": "run-p -c test:noMovies:electron test:login:electron test:seats:electron",
-    "test:parallel:folder1": "run-p -c test:login:chrome test:invalidLogin:chrome",
+    "test:parallel:folder1": "run-p -c test:login:electron test:invalidLogin:electron",
     "test:parallel:folder2": "run-p -c test:noMovies:chrome test:seats:chrome",
     "test:parallel:folder": "run-p -c test:parallel:folder1 test:parallel:folder2"
   },
