@@ -9,6 +9,7 @@
 
     "scheme": ".buying-scheme__wrapper",
     "seatPlace": " > :nth-child",
+    "seatPlace2": ".buying-scheme__chair.buying-scheme__chair_standart.buying-scheme__chair_taken",
 
     "button": ".acceptin-button"
 }

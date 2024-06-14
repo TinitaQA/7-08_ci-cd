@@ -23,7 +23,7 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-const selector = require("../fixtures/selectors");
+const selector = require("/cypress/fixtures/selectors.json");
 
 Cypress.Commands.add("login", (email, password) => {
   if (email) {

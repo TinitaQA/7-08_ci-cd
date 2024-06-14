@@ -1,14 +1,9 @@
-const log = require("../fixtures/login");
-const selector = require("../fixtures/selectors");
+const log = require("/cypress/fixtures/login");
+const selector = require("/cypress/fixtures/selectors");
 
 describe("Логин в кабинет администратора", () => {
   beforeEach(() => {
     cy.visit("/admin");
-  });
-
-  it("Логин зарегистрированного администратора", () => {
-    cy.login(log.validEmail, log.validPassword);
-    cy.get(selector.adminTitle).should("contain", "Администраторррская");
   });
 
   it("Логин незарегистрированного администратора", () => {

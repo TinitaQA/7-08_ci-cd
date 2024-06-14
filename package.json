@@ -4,10 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:login": "npx cypress run --record --key c6d3ed46-b94d-4a1d-94b4-dd0d569d5033 --spec \"cypress/e2e/loginMovie.cy.js\" --group login --ci-build-id 2",
-    "test:page": "npx cypress run --record --key c6d3ed46-b94d-4a1d-94b4-dd0d569d5033 --spec \"cypress/e2e/mainPage.cy.js\" --group page --ci-build-id 2",
-    "test:seats": "npx cypress run --record --key c6d3ed46-b94d-4a1d-94b4-dd0d569d5033 --spec \"cypress/e2e/movies.cy.js\" --group seats --ci-build-id 2",
-    "test:parallel": "run-p -c test:page test:login test:seats"
+    "test:login:chrome": "npx cypress run --browser chrome --record --spec \"cypress/e2e/log/login.cy.js\" --group login:chrome",
+    "test:invalidLogin:chrome": "npx cypress run --browser chrome --record --spec \"cypress/e2e/log/invalidLogin.cy.js\" --group invalidLogin:chrome",
+    "test:noMovies:chrome": "npx cypress run --browser chrome --record --spec \"cypress/e2e/movie/noMovies.cy.js\" --group noMovies.:chrome",
+    "test:seats:chrome": "npx cypress run --browser chrome --record --spec \"cypress/e2e/movie/movies.cy.js\" --group seats:chrome",
+    "test:parallel:chrome": "run-p -c test:noMovies:chrome test:login:chrome test:seats:chrome",
+    "test:login:electron": "npx cypress run --browser electron --record --spec \"cypress/e2e/log/login.cy.js\" --group login:electron",
+    "test:invalidLogin:electron": "npx cypress run --browser electron --record --spec \"cypress/e2e/log/invalidLogin.cy.js\" --group invalidLogin:electron",
+    "test:noMovies:electron": "npx cypress run --browser electron --record --spec \"cypress/e2e/movie/noMovies.cy.js\" --group noMovies.:electron",
+    "test:seats:electron": "npx cypress run --browser electron --record --spec \"cypress/e2e/movie/movies.cy.js\" --group seats:electron",
+    "test:parallel:electron": "run-p -c test:noMovies:electron test:login:electron test:seats:electron",
+    "test:parallel:folder1": "run-p -c test:login:chrome test:invalidLogin:chrome",
+    "test:parallel:folder2": "run-p -c test:noMovies:chrome test:seats:chrome",
+    "test:parallel:folder": "run-p -c test:parallel:folder1 test:parallel:folder2"
   },
   "author": "Kris Mishchuk",
   "license": "ISC",
