@@ -7,5 +7,6 @@ beforeEach(() => {
 
 it("Логин в кабинет администратора", () => {
   cy.login(log.validEmail, log.validPassword);
-  cy.get(selector.adminTitle).should("contain", "Администраторррская");
+  cy.contains("Администраторррская").should("be.visible");
+  //cy.get(selector.adminTitle).should("contain", "Администраторррская");
 });
